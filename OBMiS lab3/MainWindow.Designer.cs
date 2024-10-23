@@ -37,8 +37,21 @@
             buttonStart = new Button();
             label3 = new Label();
             textBoxPlainCode = new TextBox();
+            numericUpDownArifm = new NumericUpDown();
+            label4 = new Label();
+            textBoxArifmInput1 = new TextBox();
+            textBoxArifmInput2 = new TextBox();
+            textBoxArifmOutput = new TextBox();
+            label5 = new Label();
+            buttonAdd = new Button();
+            buttonSub = new Button();
+            buttonMult = new Button();
+            buttonDiv = new Button();
+            textBoxArifmPCOutput = new TextBox();
+            label6 = new Label();
             ((System.ComponentModel.ISupportInitialize)numericUpDownInput).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownOutput).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownArifm).BeginInit();
             SuspendLayout();
             // 
             // textBoxInput
@@ -126,11 +139,133 @@
             textBoxPlainCode.Size = new Size(177, 27);
             textBoxPlainCode.TabIndex = 8;
             // 
+            // numericUpDownArifm
+            // 
+            numericUpDownArifm.Location = new Point(12, 231);
+            numericUpDownArifm.Maximum = new decimal(new int[] { 16, 0, 0, 0 });
+            numericUpDownArifm.Minimum = new decimal(new int[] { 2, 0, 0, 0 });
+            numericUpDownArifm.Name = "numericUpDownArifm";
+            numericUpDownArifm.Size = new Size(69, 27);
+            numericUpDownArifm.TabIndex = 9;
+            numericUpDownArifm.Value = new decimal(new int[] { 2, 0, 0, 0 });
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(12, 208);
+            label4.Name = "label4";
+            label4.Size = new Size(161, 20);
+            label4.TabIndex = 10;
+            label4.Text = "Ввод для арифметики";
+            // 
+            // textBoxArifmInput1
+            // 
+            textBoxArifmInput1.Location = new Point(12, 264);
+            textBoxArifmInput1.Name = "textBoxArifmInput1";
+            textBoxArifmInput1.Size = new Size(177, 27);
+            textBoxArifmInput1.TabIndex = 11;
+            // 
+            // textBoxArifmInput2
+            // 
+            textBoxArifmInput2.Location = new Point(12, 332);
+            textBoxArifmInput2.Name = "textBoxArifmInput2";
+            textBoxArifmInput2.Size = new Size(177, 27);
+            textBoxArifmInput2.TabIndex = 12;
+            // 
+            // textBoxArifmOutput
+            // 
+            textBoxArifmOutput.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            textBoxArifmOutput.Location = new Point(12, 385);
+            textBoxArifmOutput.Name = "textBoxArifmOutput";
+            textBoxArifmOutput.ReadOnly = true;
+            textBoxArifmOutput.Size = new Size(177, 27);
+            textBoxArifmOutput.TabIndex = 13;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(12, 362);
+            label5.Name = "label5";
+            label5.Size = new Size(79, 20);
+            label5.TabIndex = 14;
+            label5.Text = "=======";
+            // 
+            // buttonAdd
+            // 
+            buttonAdd.Location = new Point(12, 297);
+            buttonAdd.Name = "buttonAdd";
+            buttonAdd.Size = new Size(30, 29);
+            buttonAdd.TabIndex = 15;
+            buttonAdd.Text = "+";
+            buttonAdd.UseVisualStyleBackColor = true;
+            buttonAdd.Click += buttonAdd_Click;
+            // 
+            // buttonSub
+            // 
+            buttonSub.Location = new Point(51, 297);
+            buttonSub.Name = "buttonSub";
+            buttonSub.Size = new Size(30, 29);
+            buttonSub.TabIndex = 16;
+            buttonSub.Text = "-";
+            buttonSub.UseVisualStyleBackColor = true;
+            buttonSub.Click += buttonSub_Click;
+            // 
+            // buttonMult
+            // 
+            buttonMult.Location = new Point(87, 297);
+            buttonMult.Name = "buttonMult";
+            buttonMult.Size = new Size(30, 29);
+            buttonMult.TabIndex = 17;
+            buttonMult.Text = "*";
+            buttonMult.UseVisualStyleBackColor = true;
+            buttonMult.Click += buttonMult_Click;
+            // 
+            // buttonDiv
+            // 
+            buttonDiv.Location = new Point(123, 297);
+            buttonDiv.Name = "buttonDiv";
+            buttonDiv.Size = new Size(30, 29);
+            buttonDiv.TabIndex = 18;
+            buttonDiv.Text = "/";
+            buttonDiv.UseVisualStyleBackColor = true;
+            buttonDiv.Click += buttonDiv_Click;
+            // 
+            // textBoxArifmPCOutput
+            // 
+            textBoxArifmPCOutput.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            textBoxArifmPCOutput.Location = new Point(274, 385);
+            textBoxArifmPCOutput.Name = "textBoxArifmPCOutput";
+            textBoxArifmPCOutput.ReadOnly = true;
+            textBoxArifmPCOutput.Size = new Size(177, 27);
+            textBoxArifmPCOutput.TabIndex = 20;
+            // 
+            // label6
+            // 
+            label6.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            label6.AutoSize = true;
+            label6.Location = new Point(274, 362);
+            label6.Name = "label6";
+            label6.Size = new Size(153, 20);
+            label6.TabIndex = 19;
+            label6.Text = "Двоичный результат";
+            // 
             // MainWindow
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(463, 450);
+            Controls.Add(textBoxArifmPCOutput);
+            Controls.Add(label6);
+            Controls.Add(buttonDiv);
+            Controls.Add(buttonMult);
+            Controls.Add(buttonSub);
+            Controls.Add(buttonAdd);
+            Controls.Add(label5);
+            Controls.Add(textBoxArifmOutput);
+            Controls.Add(textBoxArifmInput2);
+            Controls.Add(textBoxArifmInput1);
+            Controls.Add(label4);
+            Controls.Add(numericUpDownArifm);
             Controls.Add(textBoxPlainCode);
             Controls.Add(label3);
             Controls.Add(buttonStart);
@@ -144,6 +279,7 @@
             Text = "MainWindow";
             ((System.ComponentModel.ISupportInitialize)numericUpDownInput).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownOutput).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownArifm).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -159,5 +295,17 @@
         private Button buttonStart;
         private Label label3;
         private TextBox textBoxPlainCode;
+        private NumericUpDown numericUpDownArifm;
+        private Label label4;
+        private TextBox textBoxArifmInput1;
+        private TextBox textBoxArifmInput2;
+        private TextBox textBoxArifmOutput;
+        private Label label5;
+        private Button buttonAdd;
+        private Button buttonSub;
+        private Button buttonMult;
+        private Button buttonDiv;
+        private TextBox textBoxArifmPCOutput;
+        private Label label6;
     }
 }

@@ -28,12 +28,71 @@ namespace OBMiS_lab3
                     {
                         textBoxPlainCode.Text = CountingHandler.ToPlainCode();
                     }
-                } catch (ArgumentException ex) 
+                    else
+                    {
+                        textBoxPlainCode.Text = "";
+                    }
+                }
+                catch (ArgumentException ex)
                 {
                     MessageBox.Show("Неправильный ввод!!!");
                 }
-                
+
             }
+        }
+
+        private void doArifmetics(string str)
+        {
+            string xBin = CountingHandler.Convert(textBoxArifmInput1.Text, (int)numericUpDownArifm.Value, 2);
+            string yBin = CountingHandler.Convert(textBoxArifmInput2.Text, (int)numericUpDownArifm.Value, 2);
+            switch (str)
+            {
+                case "+":
+                    textBoxArifmOutput.Text = CountingHandler.Add(textBoxArifmInput1.Text, textBoxArifmInput2.Text, (int)numericUpDownArifm.Value);
+                    textBoxArifmPCOutput.Text = CountingHandler.BinAdd(xBin, yBin);
+                    break;
+                case "-":
+                    textBoxArifmOutput.Text = CountingHandler.Sub(textBoxArifmInput1.Text, textBoxArifmInput2.Text, (int)numericUpDownArifm.Value);
+                    textBoxArifmPCOutput.Text = CountingHandler.BinSub(xBin, yBin);
+                    break;
+                case "*":
+                    textBoxArifmOutput.Text = CountingHandler.Mult(textBoxArifmInput1.Text, textBoxArifmInput2.Text, (int)numericUpDownArifm.Value);
+                    textBoxArifmPCOutput.Text = CountingHandler.BinMult(xBin, yBin);
+
+                    break;
+                case "/":
+                    try
+                    {
+                        textBoxArifmOutput.Text = CountingHandler.Div(textBoxArifmInput1.Text, textBoxArifmInput2.Text, (int)numericUpDownArifm.Value);
+                        textBoxArifmPCOutput.Text = CountingHandler.BinDiv(xBin, yBin);
+                    }
+                    catch (DivideByZeroException ex)
+                    {
+                        MessageBox.Show("Делить на ноль нельзя!");
+                    }
+
+                    break;
+            }
+        }
+
+        private void buttonAdd_Click(object sender, EventArgs e)
+        {
+            doArifmetics(buttonAdd.Text);
+        }
+
+        private void buttonSub_Click(object sender, EventArgs e)
+        {
+            doArifmetics(buttonSub.Text);
+        }
+
+        private void buttonMult_Click(object sender, EventArgs e)
+        {
+            doArifmetics(buttonMult.Text);
+        }
+
+        private void buttonDiv_Click(object sender, EventArgs e)
+        {
+            doArifmetics(buttonDiv.Text);
         }
     }
 }
